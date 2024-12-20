@@ -1,0 +1,131 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="API documentation for Local Food Market - Connect with local food producers">
+    <title>Local Food Market API</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16 items-center">
+                    <div class="flex items-center">
+                        <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <h1 class="ml-3 text-xl font-semibold text-gray-900">
+                            Local Food Market API
+                        </h1>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main content -->
+        <main class="flex-grow">
+            <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+                <!-- Hero Section -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        API Documentation
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Everything you need to integrate with our local food marketplace
+                    </p>
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-2">
+                    <!-- Documentation Links -->
+                    <div class="bg-white overflow-hidden shadow rounded-lg">
+                        <div class="p-6">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                </div>
+                                <h3 class="ml-3 text-lg font-medium text-gray-900">
+                                    Interactive Documentation
+                                </h3>
+                            </div>
+                            <div class="mt-4">
+                                <p class="text-gray-600 mb-4">
+                                    Explore our API endpoints with an interactive interface. Test requests and see responses in real-time.
+                                </p>
+                                <a href="{{ url_for('flasgger.apidocs') }}" 
+                                   class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700">
+                                    Open Swagger UI
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API Specification -->
+                    <div class="bg-white overflow-hidden shadow rounded-lg">
+                        <div class="p-6">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <h3 class="ml-3 text-lg font-medium text-gray-900">
+                                    API Specification
+                                </h3>
+                            </div>
+                            <div class="mt-4">
+                                <p class="text-gray-600 mb-4">
+                                    Download our OpenAPI specification for detailed API documentation in JSON format.
+                                </p>
+                                <a href="{{ url_for('flasgger.apispec') }}"
+                                   class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700">
+                                    Download Spec
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Authentication Guide -->
+                <div class="mt-8 bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-6">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">
+                            Authentication Guide
+                        </h3>
+                        <div class="prose prose-sm text-gray-500">
+                            <p class="mb-4">
+                                All API endpoints require authentication using JWT tokens. Follow these steps:
+                            </p>
+                            <ol class="list-decimal list-inside space-y-2">
+                                <li>Register a new account or login using the auth endpoints</li>
+                                <li>Include the received token in your request headers</li>
+                                <li>Use the token for all authenticated requests</li>
+                            </ol>
+                            <div class="mt-4 bg-gray-50 rounded-md p-4">
+                                <p class="font-mono text-sm">
+                                    Authorization: Bearer your-token-here
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white mt-auto">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <p class="text-center text-sm text-gray-500">
+                    &copy; 2024 Local Food Market. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+```
